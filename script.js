@@ -50,7 +50,7 @@ async function loadData() {
 // Roep de functie aan om de data te laden
 loadData();
 
-function resizeText(element) {
+function resizeText_old(element) {
     const container = element.parentElement;  // De parent container van de .woord span
     const computedStyle = window.getComputedStyle(container);  // Haal de CSS-stijlen op
 
@@ -72,6 +72,27 @@ function resizeText(element) {
     }
 }
 
+function resizeText(element) {
+    const containerWidth = 118;  // Vaste breedte van de container
+    const containerHeight = 118;  // Vaste hoogte van de container
+    const paddingLeft = 20;  // Vaste linker padding
+    const paddingRight = 20;  // Vaste rechter padding
+
+    // Beschikbare breedte in de container, exclusief de padding
+    const availableWidth = containerWidth - paddingLeft - paddingRight;
+    
+    // De hoogte blijft gelijk aan containerHeight omdat er geen verticale padding is ingesteld
+    const availableHeight = containerHeight;
+
+    let fontSize = 50;  // Begin met een relatief grote lettergrootte
+    element.style.fontSize = fontSize + "px";  // Stel de beginlettergrootte in
+
+    // Verklein de fontgrootte totdat de tekst binnen de beschikbare breedte en hoogte van de container past
+    while (element.scrollWidth > availableWidth || element.scrollHeight > availableHeight) {
+        fontSize--;  // Verklein de lettergrootte
+        element.style.fontSize = fontSize + "px";
+    }
+}
 
 
 function gebruikArray(bingoDataArray) {
