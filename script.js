@@ -50,6 +50,27 @@ async function loadData() {
 // Roep de functie aan om de data te laden
 loadData();
 
+function resizeText(element) {
+    const container = element.parentElement;  // De parent container van de .woord span
+    const computedStyle = window.getComputedStyle(container);  // Haal de CSS-stijlen op
+
+    // Breedte van de container zonder padding
+    const paddingLeft = parseFloat(computedStyle.paddingLeft);  // Linker padding
+    const paddingRight = parseFloat(computedStyle.paddingRight);  // Rechter padding
+    const containerWidth = container.clientWidth - paddingLeft - paddingRight;  // Beschikbare breedte
+	
+    // Hoogte van de container zonder rekening te houden met padding (als je verticale padding hebt, kun je dit ook aanpassen)
+    const containerHeight = container.clientHeight;  // Je hoeft geen verticale padding af te trekken, tenzij dat specifiek is ingesteld
+
+    let fontSize = 50;  // Start met een grote lettergrootte
+    element.style.fontSize = fontSize + "px";  // Stel eerst een grote fontgrootte in
+
+    // Verklein de fontgrootte totdat de tekst binnen de beschikbare breedte en hoogte van de container past
+    while (element.scrollWidth > containerWidth || element.scrollHeight > containerHeight) {
+        fontSize--;
+        element.style.fontSize = fontSize + "px";
+    }
+}
 
 	
 function gebruikArray(bingoDataArray) {
@@ -83,17 +104,10 @@ function gebruikArray(bingoDataArray) {
 
 
 	}
-	//for (let i = 1; i <= 25; i++) {
-    	//const woordElement = document.querySelector(`#img${i} .woord`);
-
-	    // Controleer of het element bestaat voordat je resizeText aanroept
-	    //if (woordElement) {
-	        // Gebruik requestAnimationFrame om ervoor te zorgen dat de DOM klaar is
-	     //   requestAnimationFrame(() => {
-	     //       resizeText(woordElement);
-	     //   });
-	   // }
-	//}
+	for (let i = 1; i <= 25; i++) {
+    	  const woordElement = document.querySelector('#img' + i + ' .woord');
+ 	  resizeText(woordElement);
+	}
 
 		
 $('.bingo').on('click', function(){
