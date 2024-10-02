@@ -101,12 +101,16 @@ function gebruikArray(bingoDataArray) {
 			$('#img'+i).children('img').css('display','block');
 		}
 
-		const woordElement = document.querySelector(`#img${i} .woord`);
-		resizeText(woordElement);
+		//const woordElement = document.querySelector(`#img${i} .woord`);
+		//resizeText(woordElement);
 
 
 	}
-
+	for(var i=1;i<=25;i++){
+		const woordElement = document.querySelector(`#img${i} .woord`);
+		resizeText(woordElement);
+	}
+		
 $('.bingo').on('click', function(){
 		$(this).unbind();
 		
