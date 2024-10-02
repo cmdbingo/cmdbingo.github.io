@@ -20,15 +20,15 @@ body {
 .bingo-vak {
   position: relative; /* Zet de container als referentie voor de absolute positie van het plaatje */
   float: left;
-  width: 78px;
+  width: 118px;
   height: 118px;
   /* border: 1px solid black; */
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 20px;
-  padding-right: 20px;
+  /* padding-left: 20px;
+  padding-right: 20px; */
 }
 
 .woord {
