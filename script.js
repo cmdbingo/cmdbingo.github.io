@@ -47,6 +47,8 @@ async function loadData() {
   }
 }
 
+// Roep de functie aan om de data te laden
+loadData();
 
 function resizeText(element) {
     const container = element.parentElement;  // De parent container van de .woord span
@@ -126,6 +128,5 @@ $('.bingo').on('click', function(){
 		location.reload();
 	})
 }
-// Roep de functie aan om de data te laden
-loadData();
+
 });
