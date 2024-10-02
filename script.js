@@ -81,7 +81,7 @@ function gebruikArray(bingoDataArray) {
 
   for(var i=1;i<=25;i++){
 		const woord = bingoDataArray[i];
-		console.log(woord);
+		//console.log(woord);
 		switch(i){
 		case rij1:
 		case rij2:
@@ -126,30 +126,7 @@ $('.bingo').on('click', function(){
 		localStorage.clear();
 		location.reload();
 	})
-
-
-
 }
-
 // Roep de functie aan om de data te laden
 loadData();
-
-	
-
-
-		
-		
-
-
-
-
-
-
-
-
-
-
-
-	
-
 });
