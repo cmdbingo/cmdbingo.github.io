@@ -50,7 +50,7 @@ async function loadData() {
 // Roep de functie aan om de data te laden
 loadData();
 
-function resizeText_old(element) {
+function resizeText(element) {
     const container = element.parentElement;  // De parent container van de .woord span
     const computedStyle = window.getComputedStyle(container);  // Haal de CSS-stijlen op
 
@@ -72,7 +72,7 @@ function resizeText_old(element) {
     }
 }
 
-function resizeText(element) {
+function resizeText_new(element) {
     const containerWidth = 118;  // Vaste breedte van de container
     const containerHeight = 118;  // Vaste hoogte van de container
     const paddingLeft = 20;  // Vaste linker padding
