@@ -143,5 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const elements = document.querySelectorAll('.woord');
     elements.forEach(element => {
         resizeText(element);
+	    console.log("yup");
     });
 });
