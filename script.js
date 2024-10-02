@@ -58,7 +58,7 @@ function resizeText(element) {
     const paddingLeft = parseFloat(computedStyle.paddingLeft);  // Linker padding
     const paddingRight = parseFloat(computedStyle.paddingRight);  // Rechter padding
     const containerWidth = container.clientWidth - paddingLeft - paddingRight;  // Beschikbare breedte
-
+	console.log(containerWidth);
     // Hoogte van de container zonder rekening te houden met padding (als je verticale padding hebt, kun je dit ook aanpassen)
     const containerHeight = container.clientHeight;  // Je hoeft geen verticale padding af te trekken, tenzij dat specifiek is ingesteld
 
