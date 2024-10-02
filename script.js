@@ -128,7 +128,4 @@ $('.bingo').on('click', function(){
 }
 // Roep de functie aan om de data te laden
 loadData();
-setTimeout(function() {
-                location.reload(); 
-            }, 500); 
 });
