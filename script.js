@@ -37,7 +37,6 @@ async function loadData() {
      if (!response.ok) {
             throw new Error('Fout bij het laden van bestand');
      }
-    console.log("yup");
     const text = await response.text();
     const bingoDataArray = text.split('\n').map(woord => woord.trim().toUpperCase());
 
