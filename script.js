@@ -90,11 +90,11 @@ function gebruikArray(bingoDataArray) {
 			$('#bingokaart').append('<span class="bingo-vak" id="img'+i+'"><span class="woord" style="font-size:18px">'+woord+'</span><img src="zwart.png" width="118" height="118" alt="bingo" style="display:block;"> </span>');
 			break;
 		default:
-			if(localStorage.getItem('img'+i) == 'checked'){
+			//if(localStorage.getItem('img'+i) == 'checked'){
 				$('#bingokaart').append('<span class="bingo-vak bingo" id="img'+i+'"><span class="woord" style="font-size:18px">'+woord+'</span><img src="bingo.png" width="118" height="118" alt="bingo"> </span>');
-			} else{
-				$('#bingokaart').append('<span class="bingo-vak bingo" id="img'+i+'"><span class="woord" style="font-size:18px">'+woord+'</span><img src="bingo.png" width="118" height="118" alt="bingo"> </span>');
-			}
+			//} else{
+			//	$('#bingokaart').append('<span class="bingo-vak bingo" id="img'+i+'"><span class="woord" style="font-size:18px">'+woord+'</span><img src="bingo.png" width="118" height="118" alt="bingo"> </span>');
+			//}
 			break;
 		}
 		if(localStorage.getItem('img'+i)){
