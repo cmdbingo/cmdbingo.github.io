@@ -72,6 +72,12 @@ function resizeText(element) {
     }
 }
 
+function resizeTextWhenReady(element) {
+    requestAnimationFrame(() => {
+        resizeText(element);
+    });
+}
+	
 function gebruikArray(bingoDataArray) {
   if (bingoDataArray.length === 0) {
         console.log("Geen woorden geladen.");
@@ -106,10 +112,10 @@ function gebruikArray(bingoDataArray) {
 
 
 	}
-	for(var i=1;i<=25;i++){
-		const woordElement = document.querySelector(`#img${i} .woord`);
-		resizeText(woordElement);
-	}
+	//for(var i=1;i<=25;i++){
+	//	const woordElement = document.querySelector(`#img${i} .woord`);
+	//	resizeText(woordElement);
+	//}
 		
 $('.bingo').on('click', function(){
 		$(this).unbind();
@@ -131,4 +137,10 @@ $('.bingo').on('click', function(){
 	})
 }
 
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.woord');
+    elements.forEach(element => {
+        resizeTextWhenReady(element);
+    });
 });
