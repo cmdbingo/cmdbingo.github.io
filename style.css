@@ -35,7 +35,7 @@ body {
   position: relative; /* Zorg dat de tekst onder het plaatje komt */
   z-index: 1; /* Zorg ervoor dat de tekst hoger is dan de achtergrond van het vak */
   /* font-size: 26px; */
-
+flex-shrink: 0
   
 }
 
