@@ -60,7 +60,7 @@ function resizeText(element) {
     // Hoogte van de container zonder rekening te houden met padding (als je verticale padding hebt, kun je dit ook aanpassen)
     const containerHeight = container.clientHeight;  // Je hoeft geen verticale padding af te trekken, tenzij dat specifiek is ingesteld
 
-    let fontSize = 100;  // Start met een grote lettergrootte
+    let fontSize = 50;  // Start met een grote lettergrootte
     element.style.fontSize = fontSize + "px";  // Stel eerst een grote fontgrootte in
 
     // Verklein de fontgrootte totdat de tekst binnen de beschikbare breedte en hoogte van de container past
@@ -87,13 +87,13 @@ function gebruikArray(bingoDataArray) {
 		case rij3:
 		case rij4:
 		case rij5:
-			$('#bingokaart').append('<span class="bingo-vak" id="img'+i+'"><span class="woord" style="font-size:10px">'+woord+'</span><img src="zwart.png" width="118" height="118" alt="bingo" style="display:block;"> </span>');
+			$('#bingokaart').append('<span class="bingo-vak" id="img'+i+'"><span class="woord" style="font-size:18px">'+woord+'</span><img src="zwart.png" width="118" height="118" alt="bingo" style="display:block;"> </span>');
 			break;
 		default:
 			if(localStorage.getItem('img'+i) == 'checked'){
-				$('#bingokaart').append('<span class="bingo-vak bingo" id="img'+i+'"><span class="woord" style="font-size:10px">'+woord+'</span><img src="bingo.png" width="118" height="118" alt="bingo"> </span>');
+				$('#bingokaart').append('<span class="bingo-vak bingo" id="img'+i+'"><span class="woord" style="font-size:18px">'+woord+'</span><img src="bingo.png" width="118" height="118" alt="bingo"> </span>');
 			} else{
-				$('#bingokaart').append('<span class="bingo-vak bingo" id="img'+i+'"><span class="woord" style="font-size:10px">'+woord+'</span><img src="bingo.png" width="118" height="118" alt="bingo"> </span>');
+				$('#bingokaart').append('<span class="bingo-vak bingo" id="img'+i+'"><span class="woord" style="font-size:18px">'+woord+'</span><img src="bingo.png" width="118" height="118" alt="bingo"> </span>');
 			}
 			break;
 		}
