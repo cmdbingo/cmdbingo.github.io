@@ -71,12 +71,6 @@ function resizeText(element) {
         element.style.fontSize = fontSize + "px";
     }
 }
-
-//function resizeTextWhenReady(element) {
-//    requestAnimationFrame(() => {
-//        resizeText(element);
-//    });
-//}
 	
 function gebruikArray(bingoDataArray) {
   if (bingoDataArray.length === 0) {
@@ -101,14 +95,15 @@ function gebruikArray(bingoDataArray) {
 			//} else{
 			//	$('#bingokaart').append('<span class="bingo-vak bingo" id="img'+i+'"><span class="woord" style="font-size:18px">'+woord+'</span><img src="bingo.png" width="118" height="118" alt="bingo"> </span>');
 			//}
+			const woordElement = document.querySelector(`#img${i} .woord`);
+			resizeText(woordElement);
 			break;
 		}
 		if(localStorage.getItem('img'+i)){
 			$('#img'+i).children('img').css('display','block');
 		}
 
-		//const woordElement = document.querySelector(`#img${i} .woord`);
-		//resizeText(woordElement);
+		
 
 
 	}
@@ -137,12 +132,4 @@ $('.bingo').on('click', function(){
 	})
 }
 
-});
-document.addEventListener('DOMContentLoaded', () => {
-	console.log("DOM ready");
-    const elements = document.querySelectorAll('.woord');
-    elements.forEach(element => {
-        resizeText(element);
-	    console.log("yup");
-    });
 });
