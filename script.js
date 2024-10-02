@@ -72,11 +72,11 @@ function resizeText(element) {
     }
 }
 
-function resizeTextWhenReady(element) {
-    requestAnimationFrame(() => {
-        resizeText(element);
-    });
-}
+//function resizeTextWhenReady(element) {
+//    requestAnimationFrame(() => {
+//        resizeText(element);
+//    });
+//}
 	
 function gebruikArray(bingoDataArray) {
   if (bingoDataArray.length === 0) {
@@ -142,6 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	console.log("DOM ready");
     const elements = document.querySelectorAll('.woord');
     elements.forEach(element => {
-        resizeTextWhenReady(element);
+        resizeText(element);
     });
 });
