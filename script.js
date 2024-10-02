@@ -87,12 +87,17 @@ function resizeText(element) {
     let fontSize = 50;  // Begin met een relatief grote lettergrootte
     element.style.fontSize = fontSize + "px";  // Stel de beginlettergrootte in
 
+    // Gebruik getBoundingClientRect() om nauwkeurig de afmetingen van het element te verkrijgen
+    let rect = element.getBoundingClientRect();
+
     // Verklein de fontgrootte totdat de tekst binnen de beschikbare breedte en hoogte van de container past
-    while (element.scrollWidth > availableWidth || element.scrollHeight > availableHeight) {
+    while (rect.width > availableWidth || rect.height > availableHeight) {
         fontSize--;  // Verklein de lettergrootte
         element.style.fontSize = fontSize + "px";
+        rect = element.getBoundingClientRect();  // Update de afmetingen na elke wijziging
     }
 }
+
 
 
 function gebruikArray(bingoDataArray) {
