@@ -58,7 +58,7 @@ function resizeText(element) {
     const paddingLeft = parseFloat(computedStyle.paddingLeft);  // Linker padding
     const paddingRight = parseFloat(computedStyle.paddingRight);  // Rechter padding
     const containerWidth = container.clientWidth - paddingLeft - paddingRight;  // Beschikbare breedte
-	console.log(containerWidth);
+	
     // Hoogte van de container zonder rekening te houden met padding (als je verticale padding hebt, kun je dit ook aanpassen)
     const containerHeight = container.clientHeight;  // Je hoeft geen verticale padding af te trekken, tenzij dat specifiek is ingesteld
 
@@ -90,13 +90,9 @@ function gebruikArray(bingoDataArray) {
 			$('#bingokaart').append('<span class="bingo-vak" id="img'+i+'"><span class="woord" style="font-size:18px">'+woord+'</span><img src="zwart.png" width="118" height="118" alt="bingo" style="display:block;"> </span>');
 			break;
 		default:
-			//if(localStorage.getItem('img'+i) == 'checked'){
-				$('#bingokaart').append('<span class="bingo-vak bingo" id="img'+i+'"><span class="woord" style="font-size:18px">'+woord+'</span><img src="bingo.png" width="118" height="118" alt="bingo"> </span>');
-			//} else{
-			//	$('#bingokaart').append('<span class="bingo-vak bingo" id="img'+i+'"><span class="woord" style="font-size:18px">'+woord+'</span><img src="bingo.png" width="118" height="118" alt="bingo"> </span>');
-			//}
-			const woordElement = document.querySelector(`#img${i} .woord`);
-			resizeText(woordElement);
+			$('#bingokaart').append('<span class="bingo-vak bingo" id="img'+i+'"><span class="woord" style="font-size:18px">'+woord+'</span><img src="bingo.png" width="118" height="118" alt="bingo"> </span>');
+			//const woordElement = document.querySelector(`#img${i} .woord`);
+			//resizeText(woordElement);
 			break;
 		}
 		if(localStorage.getItem('img'+i)){
@@ -107,10 +103,18 @@ function gebruikArray(bingoDataArray) {
 
 
 	}
-	//for(var i=1;i<=25;i++){
-	//	const woordElement = document.querySelector(`#img${i} .woord`);
-	//	resizeText(woordElement);
-	//}
+	for (let i = 1; i <= 25; i++) {
+    	const woordElement = document.querySelector(`#img${i} .woord`);
+
+	    // Controleer of het element bestaat voordat je resizeText aanroept
+	    if (woordElement) {
+	        // Gebruik requestAnimationFrame om ervoor te zorgen dat de DOM klaar is
+	        requestAnimationFrame(() => {
+	            resizeText(woordElement);
+	        });
+	    }
+	}
+
 		
 $('.bingo').on('click', function(){
 		$(this).unbind();
