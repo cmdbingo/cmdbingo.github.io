@@ -72,34 +72,6 @@ function resizeText(element) {
     }
 }
 
-function resizeText_new(element) {
-    const containerWidth = 118;  // Vaste breedte van de container
-    const containerHeight = 118;  // Vaste hoogte van de container
-    const paddingLeft = 20;  // Vaste linker padding
-    const paddingRight = 20;  // Vaste rechter padding
-
-    // Beschikbare breedte in de container, exclusief de padding
-    const availableWidth = containerWidth - paddingLeft - paddingRight;
-    
-    // De hoogte blijft gelijk aan containerHeight omdat er geen verticale padding is ingesteld
-    const availableHeight = containerHeight;
-
-    let fontSize = 50;  // Begin met een relatief grote lettergrootte
-    element.style.fontSize = fontSize + "px";  // Stel de beginlettergrootte in
-
-    // Gebruik getBoundingClientRect() om nauwkeurig de afmetingen van het element te verkrijgen
-    let rect = element.getBoundingClientRect();
-
-    // Verklein de fontgrootte totdat de tekst binnen de beschikbare breedte en hoogte van de container past
-    while (rect.width > availableWidth || rect.height > availableHeight) {
-        fontSize--;  // Verklein de lettergrootte
-        element.style.fontSize = fontSize + "px";
-        rect = element.getBoundingClientRect();  // Update de afmetingen na elke wijziging
-    }
-}
-
-
-
 function gebruikArray(bingoDataArray) {
   if (bingoDataArray.length === 0) {
         console.log("Geen woorden geladen.");
