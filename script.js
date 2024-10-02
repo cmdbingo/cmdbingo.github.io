@@ -139,6 +139,7 @@ $('.bingo').on('click', function(){
 
 });
 document.addEventListener('DOMContentLoaded', () => {
+	console.log("DOM ready");
     const elements = document.querySelectorAll('.woord');
     elements.forEach(element => {
         resizeTextWhenReady(element);
