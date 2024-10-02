@@ -103,17 +103,17 @@ function gebruikArray(bingoDataArray) {
 
 
 	}
-	for (let i = 1; i <= 25; i++) {
-    	const woordElement = document.querySelector(`#img${i} .woord`);
+	//for (let i = 1; i <= 25; i++) {
+    	//const woordElement = document.querySelector(`#img${i} .woord`);
 
 	    // Controleer of het element bestaat voordat je resizeText aanroept
-	    if (woordElement) {
+	    //if (woordElement) {
 	        // Gebruik requestAnimationFrame om ervoor te zorgen dat de DOM klaar is
-	        requestAnimationFrame(() => {
-	            resizeText(woordElement);
-	        });
-	    }
-	}
+	     //   requestAnimationFrame(() => {
+	     //       resizeText(woordElement);
+	     //   });
+	   // }
+	//}
 
 		
 $('.bingo').on('click', function(){
@@ -137,3 +137,16 @@ $('.bingo').on('click', function(){
 }
 
 });
+window.addEventListener('load', () => {
+    for (let i = 1; i <= 25; i++) {
+        const woordElement = document.querySelector(`#img${i} .woord`);
+        if (woordElement) {
+            resizeTextWhenReady(woordElement);
+        }
+    }
+});
+function resizeTextWhenReady(element) {
+    requestAnimationFrame(() => {
+        resizeText(element);
+    });
+}
