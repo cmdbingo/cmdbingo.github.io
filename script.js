@@ -132,7 +132,6 @@ $('.bingo').on('click', function(){
 
 });
 window.addEventListener('load', () => {
-	console.log("load ready");
     for (let i = 1; i <= 25; i++) {
         
 	const woordElement = document.querySelector('#img' + i + ' .woord');
